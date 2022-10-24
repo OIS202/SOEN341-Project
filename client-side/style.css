@@ -10,7 +10,7 @@ header{
 }
 header ul{
     float: center;
-    margin-left: 30%;
+    margin-left: 30;
     list-style-type: none;
     margin-top: 50px;
 }
@@ -23,18 +23,21 @@ header ul li a{
     padding: 5px 20px;
     border: 1px solid #fff;
     transition: 0.6s ease;
+	margin-bottom: 0%;
 }
 header ul li a:hover{
     background-color: #000;
     color: #fff;
 }
 .logo img{
-    float: center;
-    margin-left: 50%;
+	display: block;
+    margin-left: auto;
+	margin-right: auto;
     width: 150px;
     height: auto;
 }
 .main{
+	margin-top: 0%;
     max-width: 1200px;
     margin: auto;
 }
