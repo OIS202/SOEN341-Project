@@ -127,3 +127,203 @@ ul{
     width: 100%;
 }
 }
+
+
+/* Facu's Part */
+
+
+/* Dropdown Menu */
+
+.dropdown {
+	position:relative;
+}
+
+.nav-link{
+	font-family: 'Londrina Solid';
+	font-size: large;
+}
+.nav-link:hover{
+	color:rgb(243, 238, 226);
+}
+
+
+
+/* Container */
+
+.product1 {
+	background-image: url("../logo.png");
+	background-attachment: fixed;
+	background-size: cover;
+	margin-bottom: 0;
+	padding-bottom: 10%;
+	padding-top: 10%;
+	background-position: center center;
+}
+
+.product2 {
+	background-image: url("../logo.png");
+	background-attachment: fixed;
+	background-size: cover;
+	margin-bottom: 0;
+	padding-bottom: 10%;
+	padding-top: 10%;
+	background-position: center center;
+}
+
+.product3 {
+	background-image: url("../logo.png");
+	background-attachment: fixed;
+	background-size: cover;
+	margin-bottom: 0;
+	padding-bottom: 10%;
+	padding-top: 10%;
+	background-position: center center;
+}
+
+.product4 {
+	background-image: url("../logo.png");
+	background-attachment: fixed;
+	background-size: cover;
+	margin-bottom: 0;
+	padding-bottom: 10%;
+	padding-top: 10%;
+	background-position: center center;
+}
+
+.product5 {
+	background-image: url("../logo.png");
+	background-attachment: fixed;
+	background-size: cover;
+	margin-bottom: 0;
+	padding-bottom: 10%;
+	padding-top: 10%;
+	background-position: center center;
+}
+
+.product6 {
+	background-image: url("../logo.png");
+	background-attachment: fixed;
+	background-size: cover;
+	margin-bottom: 0;
+	padding-bottom: 10%;
+	padding-top: 10%;
+	background-position: center center;
+}
+
+.container {
+	/* position: relative; */
+	font-family: 'Londrina Solid';
+	color: black;
+}
+
+.whiteBorder{
+	position: relative;
+	padding: 1em;
+	border: 5px white solid;
+	width: 27em;
+	font-family: Anton-Regular, serif; /* CHANGE FONT TO MATCH OTHERS*/
+}
+
+.centerWhite{
+	color: white;
+	text-align: center;
+}
+
+/* Filter */
+
+.all {
+	display: flex;
+}
+
+.filter-option:hover{
+	color:cadetblue;
+	text-decoration: none;
+}
+
+.filter {
+	background-color: rgb(243, 238, 226);
+	border-right: 1px solid rgba(0, 0, 0, .5);
+	-webkit-background-clip: padding-box; /* for Safari */
+	background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+	margin-right: 0;
+	width: 15em;
+	padding: 10px;
+	display: inline-block;
+	margin-left: 0;
+	text-align: left;
+}
+
+.filter-option{
+	color:black;
+	text-decoration: none;
+}
+
+.text {
+	font-family: 'Londrina Solid';
+	color: black;
+}
+
+.font-word{
+	font-size: 30px;
+}
+
+
+
+/* Product Display */
+
+.mb-5{
+	font-family: 'Londrina Solid';
+}
+
+.product {
+	border: 5px solid white !important;
+	margin-top: 13px;
+	margin-bottom: 13px;
+	padding: 0 0;
+	background-color: rgb(243, 238, 226) !important;
+}
+
+.card-aisle:hover {
+	border: 5px #0E69BE solid !important;
+	padding: 0 0;
+}
+
+.card {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+}
+
+.productLink{
+	text-decoration: none;
+}
+.productLink:hover {
+	text-decoration: none;
+}
+
+.productImage {
+	width: 296px;
+	height: 222px;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	padding-bottom: 0;
+	padding-left: -30px;
+	padding-right: -30px;
+	object-fit: contain;
+}
+
+.productDetails {
+	/*width: 15.5em;*/
+}
+
+.productName {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.productPrice{
+	font-family: Anton-Regular, serif;
+	margin-bottom: 0;
+	margin-top: 0;
+}
