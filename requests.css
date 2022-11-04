@@ -4,13 +4,13 @@
 }
 header{
     background-color: white;
-    height: 50vh;
+    height: 30vh;
     background-size: cover;
     background-position: center;
 }
 header ul{
     float: center;
-    margin-left: 30;
+    margin-left: 27%;
     list-style-type: none;
     margin-top: 50px;
 }
@@ -23,21 +23,18 @@ header ul li a{
     padding: 5px 20px;
     border: 1px solid #fff;
     transition: 0.6s ease;
-	margin-bottom: 0%;
 }
 header ul li a:hover{
     background-color: #000;
     color: #fff;
 }
 .logo img{
-	display: block;
-    margin-left: auto;
-	margin-right: auto;
+    float: center;
+    margin-left: 45%;
     width: 150px;
     height: auto;
 }
 .main{
-	margin-top: 0%;
     max-width: 1200px;
     margin: auto;
 }
@@ -126,4 +123,62 @@ ul{
   .footer-col{
     width: 100%;
 }
+}
+.gallery h3{
+	text-align: center;
+	font-size: 30px;
+	margin: 0px;
+	padding-top: 10px;
+}
+.gallery{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0;
+}
+.content{
+	width: 50%;
+	margin: 15px;
+	box-sizing: border-box;
+	float: left;
+	text-align: center;
+	border-radius: 20px;
+	cursor: pointer;
+	padding-top: 10px;
+	box-shadow: 0 14px 28px rgba(0,0, 0, 0.25), 0 10px 10px rgba(0,0, 0, 0.22);
+	transition: 0.4s;
+	background: #24262b;
+}
+.text{
+	color: #fff;
+	font-family: sans-serif;
+}
+.text button{
+	background-color: #24262b;
+	text-align: center;
+	font-size: 24px;
+	width: 75%;
+	padding: 0px;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	margin-top: 5px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+.button-text{
+	color: white;
+}
+.content:hover{
+	box-shadow: 0 3px 6px rgba(0,0, 0, 0.16), 0 3px 6px rgba(0,0, 0, 0.23);
+	transform:translate(0px,-8px);
+}
+.text i{
+	padding-top: 7px;
+	padding-bottom: 10px;
+}
+.detDes{
+	display: none;
 }

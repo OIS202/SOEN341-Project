@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CFP Materials Procurement</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Requests</title>
+    <script src="./detailedDescription.js"></script>
+    <link rel="stylesheet" type="text/css" href="../requests.css">
+    <link rel="stylesheet" href="./list-requests.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
         <div class="main">
-            <div class="logo" style = "position: relative; top:25px;">
+            <div class="logo">
                 <img src="../logo.png">
             </div>
-            <ul style = "position: relative; text-align: center;">
+            <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Sign Up</a></li>
@@ -26,9 +28,30 @@
         </div>
     </header>
     <main>
-        <div style="position: relative; text-align: center;">
-           Put your content here. Don't remove the headers or footers.
-        </div>
+        <table class="content-table">
+            <thead>
+                <th>User Email</th>
+                <th>Request Detail</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>123@email.com</td>
+                    <td>600pounds of rebar steel</td>
+                    <td> <button class="approve">Aprrove</button> <button class="decline">Decline</button></td>
+                </tr>
+                <tr class="active-row">
+                    <td>123@email.com</td>
+                    <td>600pounds of rebar steel</td>
+                    <td> <button class="approve">Aprrove</button> <button class="decline">Decline</button></td>
+                </tr>
+                <tr>
+                    <td>123@email.com</td>
+                    <td>600pounds of rebar steel</td>
+                    <td> <button class="approve">Aprrove</button> <button class="decline">Decline</button></td>
+                </tr>
+            </tbody>
+        </table>
     </main>
     <footer class="footer">
         <div class="container">
