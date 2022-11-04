@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place your page title here</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Requests</title>
+    <script src="./detailedDescription.js"></script>
+    <link rel="stylesheet" type="text/css" href="../requests.css">
+    <link rel="stylesheet" href="./list-requests.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
@@ -26,8 +28,30 @@
         </div>
     </header>
     <main>
-        <p class="text">Write your stuff here and edit the page as you like but keep the logo and the navbar and the general color</p>
-        <p>also dont change the footer</p>
+        <table class="content-table">
+            <thead>
+                <th>User Email</th>
+                <th>Request Detail</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>123@email.com</td>
+                    <td>600pounds of rebar steel</td>
+                    <td> <button class="approve">Aprrove</button> <button class="decline">Decline</button></td>
+                </tr>
+                <tr class="active-row">
+                    <td>123@email.com</td>
+                    <td>600pounds of rebar steel</td>
+                    <td> <button class="approve">Aprrove</button> <button class="decline">Decline</button></td>
+                </tr>
+                <tr>
+                    <td>123@email.com</td>
+                    <td>600pounds of rebar steel</td>
+                    <td> <button class="approve">Aprrove</button> <button class="decline">Decline</button></td>
+                </tr>
+            </tbody>
+        </table>
     </main>
     <footer class="footer">
         <div class="container">
