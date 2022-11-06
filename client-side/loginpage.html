@@ -7,6 +7,7 @@
     <title>Place your page title here</title>
     <link rel="stylesheet" type="text/css" href="loginstyle.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script defer src = "loginpage.js"></script>
 </head>
 <body>
     <header>
@@ -27,15 +28,18 @@
     </header>
     <main>
         <h1>Login</h1><br>
+        <div id="login-error-msg-holder">
+            <p id="loginErrorMsg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+        </div>
         <div class="login">
-         <form>
+         <form id = "loginForm">
             <label> Username </label> <br>
             <input type="text" placeholder="Username" name="Username" id="Username"><br>
             <label> Password </label><br>
             <input type="password" placeholder="Password" name="Password" id="Password"><br>
             <input type="checkbox"> Remember me<br>
             <label type="text" name="forgotPassword" id="forgotPassword"><a href="#">Forgot Password?</a><br>
-            <button type="submit">LOGIN</button><br>
+            <input type="submit" value= "Login" id = "loginSubmit"><br>
          </form>
         </div>
     </main>
