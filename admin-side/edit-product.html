@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place your page title here</title>
-    <link rel="stylesheet" type="text/css" href="loginstyle.css">
+    <title>CFP Materials Procurement</title>
+    <link rel="stylesheet" type="text/css" href="edit-product.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script defer src = "loginpage.js"></script>
 </head>
 <body>
     <header>
         <div class="main">
-            <div class="logo">
-                <img src="logo.png">
+            <div class="logo" style = "position: relative; top:25px;">
+                <img src="../logo.png">
             </div>
-            <ul>
+            <ul style = "position: relative; text-align: center;">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Sign Up</a></li>
@@ -26,23 +25,17 @@
             </ul>
         </div>
     </header>
-    <main>
-        <h1>Login</h1><br>
-        <div id="login-error-msg-holder">
-            <p id="loginErrorMsg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
-        </div>
-        <div class="login">
-         <form id = "loginForm">
-            <label> Username </label> <br>
-            <input type="text" placeholder="Username" name="Username" id="Username"><br>
-            <label> Password </label><br>
-            <input type="password" placeholder="Password" name="Password" id="Password"><br>
-            <input type="checkbox"> Remember me<br>
-            <label type="text" name="forgotPassword" id="forgotPassword"><a href="#">Forgot Password?</a><br>
-            <input type="submit" value= "Login" id = "loginSubmit"><br>
-         </form>
-        </div>
-    </main>
+
+    <div style="position: relative; text-align: center; font-size: 24px;">
+        Please enter new product name:
+        <input id="name" class="storage" type="text">
+        <button id = "submitname" class="button">Submit</button>
+    </div>
+    <div style="position: relative; text-align: center; font-size: 24px;">
+        Please enter new price:
+        <input id="name" class="storage" type="text">
+        <button id = "submitname" class="button">Submit</button>
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -79,3 +72,5 @@
    </footer>
 </body>
 </html>
+<script src="edit-product.js">
+</script>
