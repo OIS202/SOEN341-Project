@@ -1,0 +1,42 @@
+.content-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 1000px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    font-family: sans-serif ;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: 20%;
+}
+.content-table thead tr{
+    background-color: #24262b;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+.content-table th,.content-table td{
+    padding: 12px 15px;
+}
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+.content-table tbody tr:last-of-type{
+    border-bottom:  2px solid #24262b;
+}
+.approve,.decline{
+    border: 0;
+    background-color: white;
+    padding: 5px;
+}
+.approve{
+    margin-right: 20px;
+}
+.approve:hover{
+    background-color: #84cdb1;
+    transition: 0.6s ease;
+}
+.decline:hover{
+    background-color: #cd8484;
+    transition: 0.6s ease;
+}
