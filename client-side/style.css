@@ -129,6 +129,13 @@ ul{
 }
 
 
+
+
+
+
+
+
+
 /* Facu's Part */
 
 
@@ -270,6 +277,12 @@ ul{
 
 
 /* Product Display */
+.header1{
+	background-color: white;
+	height: 35vh;
+	background-size: cover;
+	background-position: center;
+}
 
 .mb-5{
 	font-family: 'Londrina Solid';
@@ -326,4 +339,152 @@ ul{
 	font-family: Anton-Regular, serif;
 	margin-bottom: 0;
 	margin-top: 0;
+}
+
+
+
+
+
+
+/* For each product*/
+
+.product-price {
+	font-size: 20px;
+	font-weight: bold;
+	color: coral;
+}
+.product-image {
+	height: 15em;
+
+}
+.container1 {
+	/* position: relative; */
+	font-family: 'Londrina Solid';
+	color: black;
+}
+.title {
+	font-family: 'Londrina Solid', bold;
+	color: black;
+	line-height: 1em;
+}
+.marg{
+	text-align: left;
+}
+.product-title{
+	color: #505050;
+	font-size: xx-large;
+	text-decoration: none;
+}
+.product-title:hover {
+	color: #505050;
+	font-size: xx-large;
+	text-decoration: none;
+}
+.margin{
+	margin-bottom: 2em;
+	margin-top: 2em;
+}
+.moreInfoColor {
+	background-color: rgb(243, 238, 226) !important;
+}
+.inStock{
+	color: #22b877 !important;
+	text-decoration: none;
+}
+.minus-icon, .plus-icon{
+	cursor: pointer;
+}
+.rounded-3 {
+	border-radius: .75rem!important;
+}
+.number-selector{
+	width: 6ch;
+	text-align: center;
+}
+p-2 {
+	padding: 0.5rem!important;
+}
+.text-dark {
+	color: #212529!important;
+}
+.text-bold {
+	font-weight: bold;
+}
+.border-thicc {
+	border: 3px solid #dee2e6!important;
+}
+.btn-info1{
+	color: #000;
+	background-color: #0dcaf0;
+	border-color: rgb(243, 238, 226);
+}
+.col-md-5 {
+	flex: 0 0 auto;
+	width: 41.6666666667%;
+}
+
+
+
+
+/* Backstore Product*/
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+
+	.order-table table, .order-table thead, .order-table tbody,  .order-table th, .order-table td, .order-table tr {
+		display: block;
+	}
+
+	.order-table > thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	.order-table > tr {
+		border: 1px solid #ccc;
+	}
+
+	.order-table > td {
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	.order-table > td:before {
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	.order-table > td:nth-of-type(1):before {
+		content: "Buyer Name";
+	}
+
+	.order-table > td:nth-of-type(2):before {
+		content: "Total";
+	}
+
+	.order-table > td:nth-of-type(3):before {
+		content: "Status";
+	}
+	.order-table > td:nth-of-type(4):before {
+		content: "Order #";
+	}
+
+}
+
+.order-table td:first-of-type {
+	width:25%;
+}
+.order-table {
+	position:relative;
+}
+.order-table td:last-of-type {
+	vertical-align:top;
+	padding-left:25px;
 }
