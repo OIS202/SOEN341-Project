@@ -1,7 +1,7 @@
 <?php require("loginpageclass.php") ?>
 <?php 
 if(isset($_POST['submit'])){
- $user = new LoginUser($_POST['username'], $_POST['password']);
+ $user = new LoginUser($_POST['firstname'], $_POST['Password']);
 }
 ?>
 
@@ -41,9 +41,9 @@ if(isset($_POST['submit'])){
         <div class="login">
          <form id = "loginForm" action="" method="post" enctype="multipart/form-data" autocomplete="off" >
             <label> Username </label> <br>
-            <input type="text" placeholder="Username" name="username" id="Username"><br>
+            <input type="text" placeholder="Username" name="firstname" id="Username"><br>
             <label> Password </label><br>
-            <input type="password" placeholder="Password" name="password" id="Password"><br>
+            <input type="password" placeholder="Password" name="Password" id="Password"><br>
             <input type="checkbox"> Remember me<br>
             <label type="text" name="forgotPassword" id="forgotPassword"><a href="#">Forgot Password?</a><br>
             <button type="submit" name="submit"id = "loginSubmit">Log in</button><br>
