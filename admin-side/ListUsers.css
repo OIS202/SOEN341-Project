@@ -179,7 +179,7 @@ color: #24262b;
 background-color: #ffffff;
 }
 
-/*responsive*/
+/* responsive */
 @media(max-width: 767px){
 .footer-col{
   width: 50%;

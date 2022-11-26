@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    
     <link rel="stylesheet" type="text/css" href="ListUsers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+   
 </head>
 <body>
     <header>
@@ -26,52 +29,69 @@
     </header>
 
     <main>
-      <table class="content-table">
+        <div class="row mb-5">
+            <div class="col-lg-6 offset-3">
+            <table class="content-table ">
           <thead>
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
             <th># Of Requests</th>
-            <th></th>
+            <th>Action</th>
           </thead>
           <tbody>
-              <tr>
-                <td>MyName</td>
-                <td>myname@email.com</td>
-                <td>(514) ###-####</td>
-                <td>2</td>
-                <td><button class="edit_u">edit</button></td>
-              </tr>
-              <tr>
-                <td>HisName</td>
-                <td>hisname@email.com</td>
-                <td>(514) ###-####</td>
-                <td>1</td>
-                <td><button class="edit_u">edit</button></td>
-              </tr>
-              <tr>
-                <td>HerName</td>
-                <td>hername@email.com</td>
-                <td>(514) ###-####</td>
-                <td>3</td>
-                <td><button class="edit_u">edit</button></td>
-              </tr>
-              <tr>
-                <td>YourName</td>
-                <td>yourname@email.com</td>
-                <td>(514) ###-####</td>
-                <td>4</td>
-                <td><button class="edit_u">edit</button></td>
-              </tr>
-              <tr>
-                <td><button class="add_u">add user</button></td>
-              </tr>
+          <?php
+          $userInfo = json_decode(file_get_contents("userlist.JSON", "userlist.JSON"),true);
+          $i = 0;
+          //echo $userInfo[$i]["firstname"];
+          while(isset($userInfo[$i]))
+          {
+              echo "<tr>";
+              echo "<td>". $userInfo[strval($i)]["name"] ."</td>";
+              echo "<td>". $userInfo[strval($i)]["email"] ."</td>";
+              echo "<td>". $userInfo[strval($i)]["phone_number"] ."</td>";
+              echo "<td>". $userInfo[strval($i)]["n_request"] ."</td>";
+              echo "<td>". "<a class='button' href='EditUser.php?action=edit&id=".strval($i)."'><i class='fa fa-edit'></i></a>" ." ". "<a class='button' href='ListUsers.php?action=delete&id=".strval($i)."'><i class='fa fa-trash'></i></a>" ."</td>";
+            //   echo "<td>". "<a class='button' href='ListUsers.php?action=delete&id=".strval($i)."'>Delete User</a>" ."</td>"; 
+              echo "</tr>";
+              $i++;
+          }
+          echo "<tr>";
+        
+        //   echo "<td>". "<a class='button' href='EditUser.php?action=edit&id=".strval($i)."'>Edit User</a>" ." ". "<a class='button' href='ListUsers.php?action=delete&id=".strval($i)."'>Delete User</a>" ."</td>";
+          echo "<td>". " <a class='button'  href='EditUser.php?action=add'><i class='fa fa-plus'></i></a>" ."</td>"; 
+          echo "</tr>";
+          ?>
+           <!-- <a class="button" class="btn btn-primary" href="EditUser.php?action=add">Add user</a> -->
           </tbody>
+         
       </table>
+         
+            </div>
+        </div>
+    
+      <!-- <div class="list-user-footer">
+        <a class="button" href="EditUser.php?action=add">Add user</a>
+      </div> -->
     </main>
 
-
-    <footer class="footer">
+    <?php
+    if(isset($_GET['action'])){
+       if($_GET['action']=='delete')
+       {
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            unset($userInfo[$id]); 
+            $userInfo = array_values($userInfo);
+            file_put_contents("userlist.JSON", json_encode($userInfo, JSON_PRETTY_PRINT));
+            header("Location: ListUsers.php");
+          }
+    }
+      
+    
+    }
+  ?>
+    <footer class="footer mt-5">
         <div class="container">
             <div class="row">
                 <div class="footer-col">
