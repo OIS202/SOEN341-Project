@@ -12,30 +12,32 @@
     <header>
         <div class="main">
             <div class="logo" style = "position: relative; top:25px;">
-                <img src="../logo.png">
+                <img src=".\logo.png">
             </div>
             <ul style = "position: relative; text-align: center;">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a href="#">Cart</a></li>
-                <li><a href="#">Requests</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="Admin Soen341/index.html">Home</a></li>
+                <li><a href="edit-product.html">Edit Product</a></li>
+                <li><a href="backstore/list-product.html">List Product</a></li>
+                <li><a href="admin-side/EditUser.html">Edit User</a></li>
+                <li><a href="admin-side/ListUsers.html">List User</a></li>
+                <li><a href="list-requests.html">List Requests</a></li>
             </ul>
         </div>
     </header>
 
-    <div style="position: relative; text-align: center; font-size: 24px;">
-        Please enter new product name:
-        <input id="name" class="storage" type="text">
-        <button id = "submitname" class="button">Submit</button>
-    </div>
-    <div style="position: relative; text-align: center; font-size: 24px;">
-        Please enter new price:
-        <input id="name" class="storage" type="text">
-        <button id = "submitname" class="button">Submit</button>
-    </div>
+    <form action="handle-edit-product.php" method = "post">
+        <input type="hidden" name="id" value=<?php echo $_GET['id'];?> />
+        <label>Please enter a new product name:</label>
+        <input type = "text" name="newname" value = ''/><br><br>
+        <label>Please enter a new product price:</label>
+        <input type = "text" name="newprice" value = ''/><br><br>
+        <label>Please enter a new product description:</label>
+        <input type = "text" name="newdesc" value = ''/><br><br>
+        <label>Please enter a new product section:</label>
+        <input type = "text" name="newsect" value = ''/><br><br>
+        <input type = "submit" name = "confirm" value = 'Confirm'/>
+    </form>
+
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -69,8 +71,6 @@
                 </div>
             </div>
         </div>
-   </footer>
+    </footer>
 </body>
 </html>
-<script src="edit-product.js">
-</script>
