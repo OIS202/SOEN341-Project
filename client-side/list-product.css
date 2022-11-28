@@ -157,8 +157,8 @@ ul{
 
 /* Container */
 
-.product1 {
-	background-image: url("../logo.png");
+.vegetal {
+	background-image: url("../vegetal.png");
 	background-attachment: fixed;
 	background-size: cover;
 	margin-bottom: 0;
@@ -167,8 +167,8 @@ ul{
 	background-position: center center;
 }
 
-.product2 {
-	background-image: url("../logo.png");
+.animal {
+	background-image: url("../animal.png");
 	background-attachment: fixed;
 	background-size: cover;
 	margin-bottom: 0;
@@ -177,8 +177,8 @@ ul{
 	background-position: center center;
 }
 
-.product3 {
-	background-image: url("../logo.png");
+.mining {
+	background-image: url("../mining.png");
 	background-attachment: fixed;
 	background-size: cover;
 	margin-bottom: 0;
@@ -187,35 +187,9 @@ ul{
 	background-position: center center;
 }
 
-.product4 {
-	background-image: url("../logo.png");
-	background-attachment: fixed;
-	background-size: cover;
-	margin-bottom: 0;
-	padding-bottom: 10%;
-	padding-top: 10%;
-	background-position: center center;
-}
 
-.product5 {
-	background-image: url("../logo.png");
-	background-attachment: fixed;
-	background-size: cover;
-	margin-bottom: 0;
-	padding-bottom: 10%;
-	padding-top: 10%;
-	background-position: center center;
-}
 
-.product6 {
-	background-image: url("../logo.png");
-	background-attachment: fixed;
-	background-size: cover;
-	margin-bottom: 0;
-	padding-bottom: 10%;
-	padding-top: 10%;
-	background-position: center center;
-}
+
 
 .container {
 	/* position: relative; */
@@ -354,8 +328,7 @@ ul{
 	color: coral;
 }
 .product-image {
-	height: 15em;
-
+	height: 20em;
 }
 .container1 {
 	/* position: relative; */

@@ -1,24 +1,38 @@
+<?php
+
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+$id = $_GET["id"];
+$product = [];
+if (($handle = fopen("../../backstore/database/myProducts.csv", "r")) !== FALSE) {
+    while (($row = fgetcsv($handle)) !== FALSE) {
+        if($row[0] == $id){
+            $product = $row;
+        }
+    }
+    fclose($handle);
+} else {
+    $error = "Something wrong occurred. Cannot continue!";
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="../../client-side/list-product.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
 
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../../client-side/style.css">
+    <link rel="stylesheet" type="text/css" href="../../client-side/list-product.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!--        <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />-->
@@ -29,7 +43,9 @@
 
 
     <title>
-        Product1
+        <?php
+        echo $product[1];
+        ?>
     </title>
 
 </head>
@@ -47,12 +63,9 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Aisles </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="../product1.html">Product1</a>
-                    <a class="dropdown-item" href="../product2.html">Product2</a>
-                    <a class="dropdown-item" href="../product3.html">Product3</a>
-                    <a class="dropdown-item" href="../product4.html">Product4</a>
-                    <a class="dropdown-item" href="../product5.html">Product5</a>
-                    <a class="dropdown-item" href="../product6.html">Product6</a>
+                    <a class="dropdown-item" href="../vegetal.php">Vegetal</a>
+                    <a class="dropdown-item" href="../animal.php">Animal</a>
+                    <a class="dropdown-item" href="../mining.php">Mining</a>
                 </div>
             </li>
             <li><a href="#">Sign Up</a></li>
@@ -64,44 +77,42 @@
     </div>
 </header>
 
-
-
-<div class="container1">
+<div class="container">
     <div class="row">
         <div class="col-md-5 ">
             <br>
 
-            <img class="product-image" src="../../logo.png" alt="Product1">
+            <img class="product-image" src="../../<?php echo $product[4] ?>" alt="<?php $product[1] ?>">
 
         </div>
 
         <div class="col-md-7 marg">
             <br>
 
-            <h4 class="pro-d-title product-title" id="title">Product1</h4>
+            <h4 class="pro-d-title product-title" id="title"><?php echo $product[1]?></h4>
 
             <div class="margin">
-                <button type="button" class="btn btn-info1 moreInfoColor" data-toggle="collapse" data-target="#demo">More info</button>
+                <button type="button" class="btn btn-info moreInfoColor" data-toggle="collapse" data-target="#demo">More info</button>
                 <div id="demo" class="collapse">
-                    Good quality wood
+                    <?php echo $product[6] ?>
                 </div>
             </div>
 
-            <p class='product-price'>$<span id='product-Price'>999.99</span> each</p>
-
-
+            <?php
+            echo "<p class='product-price'>$<span id='product-Price'>$product[2]</span> $product[3]</p>";
+            ?>
             <div class="product_meta">
                 <span class="posted_in"> <strong>Availability:</strong> <a class="inStock" href="#">In Stock</a></span>
             </div>
             <label>Quantity: </label>
             <label>
                 <i class="fas plus-icon fa-plus align-self-center mr-2 plus" name="plus"></i>
-                <input type="hidden" value="999.99" name="unitary">
-                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector"  id="quantity" value="1" type="number" disabled>
+                <input type="hidden" value="5.99" name="unitary">
+                <input class="text-dark text-bold border-thicc p-2 rounded-3 number-selector" id="quantity" value="1" type="number" disabled>
                 <i class="fas minus-icon fa-minus align-self-center ml-2 minus" name="minus"></i>
             </label>
             <button type="button" class="btn btn-outline-success add" >Add to cart</button>
-            <p id="change"></p>
+            <p id="change">Total (before taxes) : $ <?php echo $product[2]?></p>
             <p>
         </div>
     </div>
@@ -109,7 +120,6 @@
 
 
 </div>
-
 
 
 <footer class="footer">
@@ -146,10 +156,11 @@
         </div>
     </div>
 </footer>
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 </body>
 </html>
