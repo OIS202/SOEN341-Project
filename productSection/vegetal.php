@@ -1,3 +1,19 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+$products = [];
+if (($handle = fopen("../backstore/database/myProducts.csv", "r")) !== FALSE) {
+    while (($row = fgetcsv($handle)) !== FALSE) {
+        if($row[5] == "Vegetal")
+            array_push($products, $row);
+    }
+    fclose($handle);
+} else {
+    $error = "Something wrong occurred. Cannot continue!";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +34,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8">
-    <title>Product1</title>
+    <title>Vegetal</title>
 
 </head>
 <body>
@@ -34,12 +50,9 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Aisles </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="product1.html">Product1</a>
-                    <a class="dropdown-item" href="product2.html">Product2</a>
-                    <a class="dropdown-item" href="product3.html">Product3</a>
-                    <a class="dropdown-item" href="product4.html">Product4</a>
-                    <a class="dropdown-item" href="product5.html">Product5</a>
-                    <a class="dropdown-item" href="product6.html">Product6</a>
+                    <a class="dropdown-item" href="vegetal.php">Vegetal</a>
+                    <a class="dropdown-item" href="animal.php">Animal</a>
+                    <a class="dropdown-item" href="mining.php">Mining</a>
                 </div>
             </li>
             <li><a href="#">Sign Up</a></li>
@@ -52,9 +65,9 @@
 </header>
 
 
-<div class="jumbotron jumbotron-fluid product1">
+<div class="jumbotron jumbotron-fluid vegetal">
     <div class="container whiteBorder">
-        <h1 class="display-4 centerWhite">Product1</h1>
+        <h1 class="display-4 centerWhite">Vegetal</h1>
     </div>
 </div>
 
@@ -68,22 +81,13 @@
         </p>
 
         <p class="filterCategory">
-            <a class="filter-option" href="product1.html">Product1</a>
+            <a class="filter-option" href="vegetal.php">Vegetal</a>
         </p>
         <p class="filterCategory">
-            <a class="filter-option" href="product2.html">Product2</a>
+            <a class="filter-option" href="animal.php">Animal</a>
         </p>
         <p class="filterCategory">
-            <a class="filter-option" href="product3.html">Product3</a>
-        </p>
-        <p class="filterCategory">
-            <a class="filter-option" href="product4.html">Product4</a>
-        </p>
-        <p class="filterCategory">
-            <a class="filter-option" href="product5.html">Product5</a>
-        </p>
-        <p class="filterCategory">
-            <a class="filter-option" href="product6.html">Product6</a>
+            <a class="filter-option" href="mining.php">Mining</a>
         </p>
     </div>
 
@@ -92,17 +96,27 @@
 
     <div class="container mt-5 mb-5">
         <div class="row">
-            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                <div class="product card-aisle rounded uk-card-default card product">
-                    <a class="productLink" href="product/product.html">
-                        <img class="productImage" alt="Product1" src="../img/logo.png">
-                    </a>
-                    <div class="card-body productDetails">
-                        <p class="productName" align="center"> Facu </p>
-                        <p class='productPrice' align="center"> $100 </p>";
+
+            <?php
+            foreach($products as $product):
+                ?>
+
+                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="product card-aisle rounded uk-card-default card product">
+                        <a class="productLink" href="product/product.php?id=<?php echo $product[0] ?>">
+                            <img class="productImage" alt="<?php echo $product[1] ?>" src="../<?php echo $product[4] ?>">
+                        </a>
+                        <div class="card-body productDetails" align="center">
+                            <p class="productName"><?php echo $product[1] ?></p>
+                            <?php
+                            echo "<p class='productPrice'> \$$product[2] $product[3] </p>";
+                            ?>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+            <?php endforeach; ?>
+
         </div>
     </div>
 </div>
