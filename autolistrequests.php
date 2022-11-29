@@ -7,6 +7,7 @@
     <title>Requests</title>
     <script src="./detailedDescription.js"></script>
     <link rel="stylesheet" type="text/css" href="requests.css">
+    <link rel="stylesheet" href="./list-requests.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -16,51 +17,40 @@
                 <img src="img/logo.png">
             </div>
             <ul>
-                <li><a href="client-side/homepage.html">Home</a></li>
-                <li><a href="productSection/product1.html">Products</a></li>
-                <li><a href="SignupPage.html">Sign Up</a></li>
-                <li><a href="client-side/loginpage.html">Log In</a></li>
-                <li><a href="Project Soen341/Cart.html">Cart</a></li>
-                <li><a href="requests.html">Requests</a></li>
-                <li><a href="client-side/AboutPage.html">About</a></li>
+                <li><a href="Admin Soen341/index.html">Home</a></li>
+                <li><a href="edit-product.html">Edit Product</a></li>
+                <li><a href="backstore/list-product.html">List Product</a></li>
+                <li><a href="admin-side/EditUser.html">Edit User</a></li>
+                <li><a href="admin-side/ListUsers.html">List User</a></li>
+                <li><a href="list-requests.html">List Requests</a></li>
             </ul>
         </div>
     </header>
     <main>
-        <?php
-            $requestInfo = json_decode(file_get_contents("./requests.json"),true);
-            $j = 0;
-            $userCounter = 0;
-            while(isset($requestInfo[strval($j)])){
-                if(strcmp($requestInfo[strval($j)]["username"],"omar") == 0){
-                    echo "<div class=\"gallery\">";
-                    echo "<div class=\"content\">";
-                    echo "<div class=\"text\">";
-                    echo "<h3 class=\"request\"> Request ".($userCounter+1)."</h3>";
-                    echo "<h4 class=\"status\">".$requestInfo[strval($j)]["status"]."</h4>";
-                    echo "<p>".$requestInfo[strval($j)]["details"]."</p>";
-                    if(strcmp($requestInfo[strval($j)]["status"],"approved") == 0){
-                        echo "<i class=\"fa-solid fa-angles-down\" id=\"".($j+1)."\" onclick=\"showIt(this.id)\"></i>";
+        <table class="content-table">
+            <thead>
+                <th>Username</th>
+                <th>Request Detail</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <?php
+                    $requestInfo = json_decode(file_get_contents("./requests.json"),true);
+                    $j = 0;
+                    while(isset($requestInfo[strval($j)])){
+                        if(strcmp($requestInfo[strval($j)]["status"],"pending") == 0){
+                            echo "<tr>";
+                            echo "<td>".$requestInfo[strval($j)]["username"]."</td>";
+                            echo "<td>Details: ".$requestInfo[strval($j)]["details"]."| Total: ".$requestInfo[strval($j)]["total"]."</td>";
+                            echo "<td> <button class=\"approve\"> <a href=\"./handleRequests.php?action=approve&id=".$j."\">Approve</a> </button> <button class=\"decline\"><a href=\"./handleRequests.php?action=decline&id=".$j."\">Decline</a></button> </td>";
+                            echo "</tr>";
+                        }
+                        $j++;
                     }
-                    echo "<div class=\"detDes\" id=\"button".($j+1)."\">";
-                    echo "<p>";
-                    echo $requestInfo[strval($j)]["details"];
-                    echo "<br>";
-                    echo "Total: ".$requestInfo[strval($j)]["total"];
-                    echo "</p>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
-                    $userCounter++;
-                }
-                $j++;
-            }
-        ?>
+                ?>
+            </tbody>
+        </table>
     </main>
-    <script>
-        showDelete();
-    </script>
     <footer class="footer">
         <div class="container">
             <div class="row">
