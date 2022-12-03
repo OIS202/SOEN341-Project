@@ -2,7 +2,7 @@
 if(isset($_GET["id"])) {
     $id = $_GET["id"];
     $product = [];
-    if (($handle = fopen("database/products.csv", "r")) !== FALSE) {
+    if (($handle = fopen("./database/myProducts.csv", "r")) !== FALSE) {
         while (($row = fgetcsv($handle)) !== FALSE) {
             if ($row[0] == $id) {
                 $product = $row;
@@ -53,7 +53,7 @@ if(isset($_GET["id"])) {
             <li class="uk-active"><a href="../index.html"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
 
             <li class="uk-active">
-                <a href="product-list.php">Products</a>
+                <a href="list-product.php">Products</a>
             </li>
 
             <li class="uk-active">
@@ -70,44 +70,41 @@ if(isset($_GET["id"])) {
 
 
 <div class="d-flex justify-content-center align-items-center signBack-container">
-    <form enctype="multipart/form-data" class="sign-form text-center" method="POST" action="product-write.php">
+    <form enctype="multipart/form-data" class="sign-form text-center" method="post" action="product-write.php">
         <h1 class="mb-5 font-weight-light">Edit products</h1>
 
+
+        <input type="hidden" name="id" value=<?php echo $_GET['id'];?> />
+
+        <label>Please enter a new product name:</label>
         <label class="label">Product name</label>
         <div class="form-group mb-2">
-            <input name="name" id="name" class="form-control form-control-lg" placeholder="Name" value="<?php echo isset($product[1]) ? ($product[1]) : '' ?>"
+            <input name="newname" id="name" class="form-control form-control-lg" placeholder="Name" value="<?php echo isset($product[1]) ? ($product[1]) : '' ?>"
             >
-        </div>
         <label class="label">Product description</label>
         <div class="form-group mb-2">
-            <input name="proDes" id="proDes" class="form-control form-control-lg" placeholder="Description" value="<?php echo isset($product[7]) ? ($product[7]) : '' ?>"
+            <input name="newdesc" id="newdesc" class="form-control form-control-lg" placeholder="Description" value="<?php echo isset($product[6]) ? ($product[6]) : '' ?>"
             >
         </div>
         <label class="label">Price</label>
         <div class="form-group mb-2">
-            <input name="price" id="price" class="form-control form-control-lg" placeholder="Price"
-                   value="<?php echo isset($product[3]) ? ($product[3]) : '' ?>">
-        </div>
-        <label class="label">Price after discount</label>
-        <div class="form-group mb-2">
-            <input name="discount" id="discount" class="form-control form-control-lg" placeholder="Discount" value="<?php echo isset($product[2]) ? ($product[2]) : '' ?>"
-            >
+            <input name="newprice" id="newprice" class="form-control form-control-lg" placeholder="Price"
+                   value="<?php echo isset($product[2]) ? ($product[2]) : '' ?>">
         </div>
         <label class="label">Quantity type</label>
         <div class="form-group mb-2">
-            <input name="quantityType" id="quantityType" class="form-control form-control-lg" placeholder="Quantity Type" value="<?php echo isset($product[4]) ? ($product[4]) : '' ?>"
-            >
+            <input name="newqty" id="quantityType" class="form-control form-control-lg" placeholder="Quantity Type" value="<?php echo isset($product[3]) ? ($product[3]) : '' ?>">
         </div>
         <label class="label">Image file</label>
         <div class="custom-file">
-            <input type="file" name="image" class="custom-file-input" id="image" required accept="image/*">
-            <label class="custom-file-label" for="image"><?php echo isset($product[5]) ? ($product[5]) : 'Choose file' ?></label>
+            <input type="file" name="newimage" class="custom-file-input" id="image" required accept="image/*">
+            <label class="custom-file-label" for="image"><?php echo isset($product[4]) ? ($product[4]) : 'Choose file' ?></label>
         </div>
         <label class="label">Product aisle</label>
         <div class="form-group col-md-6">
-            <select id="aisle" name="aisle" class="form-control ">
+            <select id="aisle" name="newsect" class="form-control ">
 
-                <option selected ><?php echo isset($product[6]) ? ($product[6]) : '' ?></option>
+                <option selected ><?php echo isset($product[5]) ? ($product[5]) : '' ?></option>
 
                 <option>Fruits and Vegetables</option>
                 <option>Meat and Poultry</option>
@@ -115,6 +112,7 @@ if(isset($_GET["id"])) {
                 <option>Beverages</option>
                 <option>Bread And Bakery</option>
                 <option>Dairy And Eggs</option>
+                <option>Test Option</option>
 
             </select>
         </div>

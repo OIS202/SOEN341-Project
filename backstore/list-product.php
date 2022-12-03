@@ -46,19 +46,21 @@
         <h1>Products</h1>
     </div>
     <div class="col-sm-2">
-        <a href=""><button type="button" id="add-button" class="btn btn-success" onclick=""><i class="fas fa-plus"></i> Add</button></a>
+        <a href="add-product.php"><button type="button" id="add-button" class="btn btn-success" onclick=""><i class="fas fa-plus"></i> Add</button></a>
     </div>
 </div>
 
 
 <?php
-$products = fopen("database/myProducts.csv", "r");
+$products = fopen("./database/myProducts.csv", "r");
 echo "<table id='product-table' class='table table-striped order-table'\n\n>
     <thead>
     <tr>
             <th scope='col'>Product name</th>
             <th scope='col'>Price</th>
+            <th scope='col'>Quantity Type</th>
             <th scope='col'>Section</th>
+            <th scope='col'>Product Description</th>
             <th scope='col'></th>
     </tr>
     </thead>
@@ -69,8 +71,10 @@ while (($row = fgetcsv($products)) !== false) {
     $productName =  $row[1];
     echo "<td>" . htmlspecialchars($row[1]) . "</td>";
     echo "<td>" . htmlspecialchars($row[2]) . "</td>";
+    echo "<td>" . htmlspecialchars($row[3]) . "</td>";
     echo "<td>" . htmlspecialchars($row[5]) . "</td>";
-    echo "<td><a href='../backstore/edit-product.php?id=$row[0]'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/delete-product.php?name=$productName'><button onclick='' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
+    echo "<td>" . htmlspecialchars($row[6]) . "</td>";
+    echo "<td><a href='./edit-product.php?id=$row[0]'><button type='button' class='btn btn-primary btn-sm' style='margin-right: 4px;'>Edit</button></a><a href='../backstore/delete-product.php?name=$productName'><button onclick='' type='submit' class='btn btn-danger btn-sm'>Remove</button></a></td>";
     echo "</tr>\n";
 }
 fclose($products);
