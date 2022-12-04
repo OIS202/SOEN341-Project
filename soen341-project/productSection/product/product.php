@@ -68,7 +68,7 @@ if (($handle = fopen("../../backstore/database/myProducts.csv", "r")) !== FALSE)
                     <a class="dropdown-item" href="../mining.php">Mining</a>
                 </div>
             </li>
-            <li><a href="../../SignupPage.html">Sign Up</a></li>
+            <li><a href="../../SignupPage.php">Sign Up</a></li>
             <li><a href="../../client-side/loginpage.php">Log In</a></li>
             <li><a href="../../Cart-Anass/Cart.php">Cart</a></li>
             <li><a href="../../apprRequests.php">Requests</a></li>
