@@ -21,7 +21,6 @@
                 <li><a href="../Admin Soen341/index.html">Home</a></li>
                 <li><a href="../backstore/edit-product.php">Edit Product</a></li>
                 <li><a href="../backstore/list-product.php">List Product</a></li>
-                <li><a href="EditUser.php">Edit User</a></li>
                 <li><a href="ListUsers.php">List User</a></li>
                 <li><a href="../autolistrequests.php">List Requests</a></li>
             </ul>

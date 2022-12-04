@@ -39,9 +39,6 @@
                 <a href="list-product.php">List Product</a>
             </li>
             <li class="uk-active">
-                <a href="../admin-side/EditUser.php">Edit User</a>
-            </li>
-            <li class="uk-active">
                 <a href="../admin-side/ListUsers.php">List User</a>
             </li>
         </ul>
