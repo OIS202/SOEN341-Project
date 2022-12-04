@@ -50,7 +50,7 @@ if(isset($_GET["id"])) {
     <div class="uk-navbar-left">
 
         <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="../index.html"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
+            <li class="uk-active"><a href="../index.html"><img src="../img/logo.png" style="height: 85px;"></a></li>
             <li class="uk-active">
                 <a href="../Admin Soen341/index.html">Home</a>
             </li>
@@ -62,9 +62,6 @@ if(isset($_GET["id"])) {
             </li>
             <li class="uk-active">
                 <a href="list-product.php">List Product</a>
-            </li>
-            <li class="uk-active">
-                <a href="../admin-side/EditUser.php">Edit User</a>
             </li>
             <li class="uk-active">
                 <a href="../admin-side/ListUsers.php">List User</a>

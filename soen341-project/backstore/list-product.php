@@ -25,7 +25,7 @@
     <div class="uk-navbar-left">
 
     <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="../index.html"><img src="../assets/images/logo.png" style="height: 85px;"></a></li>
+            <li class="uk-active"><a href="../index.html"><img src="../img/logo.png" style="height: 85px;"></a></li>
             <li class="uk-active">
                 <a href="../Admin Soen341/index.html">Home</a>
             </li>
