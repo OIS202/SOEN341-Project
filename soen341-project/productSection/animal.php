@@ -45,7 +45,7 @@ if (($handle = fopen("../backstore/database/myProducts.csv", "r")) !== FALSE) {
             <img src="../img/logo.png">
         </div>
         <ul style = "position: relative; text-align: center; background-color: rgb(243, 238, 226);">
-            <li><a href="#">Home</a></li>
+            <li><a href="../client-side/homepage.html">Home</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Aisles </a>

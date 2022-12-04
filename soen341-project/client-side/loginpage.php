@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     <header>
         <div class="main">
             <div class="logo">
-                <img src="logo.png">
+                <img src="img/logo.png">
             </div>
             <ul>
                 <li><a href="homepage.html">Home</a></li>
