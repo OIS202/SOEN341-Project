@@ -25,15 +25,21 @@
     <div class="uk-navbar-left">
 
         <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="../client-side/homepage.html"><img src="../logo.png" style="height: 85px;"></a></li>
-
-            <li class="uk-active"><a href="list-product.html">Products</a></li>
+            <li class="uk-active"><a href="../client-side/homepage.html"><img src="../img/logo.png" style="height: 85px;"></a></li>
 
             <li class="uk-active">
-                <a href="">Users</a>
+                <a href="../Admin Soen341/index.html">Home</a>
+            </li>
+            
+            <li class="uk-active">
+                <a href="list-product.php">Products</a>
+            </li>
+
+            <li class="uk-active">
+                <a href="../admin-side/ListUsers.php">Users</a>
             </li>
             <li class="uk-active">
-                <a href="">Orders</a>
+                <a href="../autolistrequests.php">Requests</a>
             </li>
         </ul>
 

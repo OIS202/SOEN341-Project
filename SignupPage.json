@@ -4,7 +4,7 @@
      "lastname":"Doe", 
 "adress":"33 King street",
     "email": "john@codex.com",
-"Password":"33Kingstreet"
+"Password":"33Kingstreet",
 "repeatPassword":"33Kingstreet"
     
   }

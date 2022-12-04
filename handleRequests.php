@@ -1,5 +1,5 @@
 <?php
-    if(isset($_GET['action'])){//$_POST['newname']
+    if(isset($_GET['action'])){
         $action = $_GET['action'];
         //echo $action;
     }
@@ -7,7 +7,6 @@
         $id = $_GET['id'];
         //echo $id;
     }
-    //
     $requestInfo = json_decode(file_get_contents("./requests.json"),true);
     $status = $action."d";
     $requestInfo[strval($id)]["status"] = $status;

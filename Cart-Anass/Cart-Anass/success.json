@@ -10,5 +10,11 @@
         "status": "pending",
         "details": "60 Raw wood:20.00$,180 Gravel:15.00$,80 Sand:10.00$",
         "total": "5405$"
+    },
+    {
+        "username": "omar",
+        "status": "pending",
+        "details": "",
+        "total": "<br \/><b>Warning<\/b>:  Undefined variable $totalPrice in <b>C:\\xampp\\htdocs\\php_practice\\soen341-project\\Cart-Anass\\Cart-Anass\\Cart.php<\/b> on line <b>181<\/b><br \/><br \/><b>Warning<\/b>:  Undefined variable $tax in <b>C:\\xampp\\htdocs\\php_practice\\soen341-project\\Cart-Anass\\Cart-Anass\\Cart.php<\/b> on line <b>181<\/b><br \/>0$"
     }
 ]

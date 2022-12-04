@@ -15,13 +15,13 @@
                 <img src="images/logo.png">
             </div>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a href="#">Cart</a></li>
-                <li><a href="#">Requests</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="../../client-side/homepage.html">Home</a></li>
+                <li><a href="../../productSection/animal.php">Products</a></li>
+                <li><a href="../../SignupPage.html">Sign Up</a></li>
+                <li><a href="../../client-side/loginpage.php">Log In</a></li>
+                <li><a href="Cart.php">Cart</a></li>
+                <li><a href="../../apprRequests.php">Requests</a></li>
+                <li><a href="../../client-side/AboutPage.html">About</a></li>
             </ul>
         </div>
     </header>

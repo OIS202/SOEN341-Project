@@ -58,7 +58,6 @@ if (($handle = fopen("../../backstore/database/myProducts.csv", "r")) !== FALSE)
             <img src="../../logo.png">
         </div>
         <ul style = "position: relative; text-align: center; background-color: rgb(243, 238, 226);">
-            <li><a href="#">Home</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Aisles </a>
@@ -68,11 +67,13 @@ if (($handle = fopen("../../backstore/database/myProducts.csv", "r")) !== FALSE)
                     <a class="dropdown-item" href="../mining.php">Mining</a>
                 </div>
             </li>
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Requests</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="../../client-side/homepage.html">Home</a></li>
+            <li><a href="../animal.php">Products</a></li>
+            <li><a href="../../SignupPage.html">Sign Up</a></li>
+            <li><a href="../../client-side/loginpage.php">Log In</a></li>
+            <li><a href="../../Cart-Anass/Cart-Anass/Cart.php">Cart</a></li>
+            <li><a href="../../apprRequests.php">Requests</a></li>
+            <li><a href="../../client-side/AboutPage.html">About</a></li>
         </ul>
     </div>
 </header>
